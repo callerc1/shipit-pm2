@@ -9,7 +9,7 @@ module.exports = function (gruntOrShipit) {
   var shipit = utils.getShipit(gruntOrShipit);
 
   require('./init')(gruntOrShipit);
-  require('./update-confd')(gruntOrShipit);
+  require('./update-interpreter')(gruntOrShipit);
   require('./start-or-restart')(gruntOrShipit);
   require('./cmd')(gruntOrShipit);
 
@@ -27,7 +27,7 @@ module.exports = function (gruntOrShipit) {
       shipit.on('nvm_inited', function () {
 
         shipit.on('updated', function () {
-          utils.runTask(gruntOrShipit, 'pm2:update-confd');
+          utils.runTask(gruntOrShipit, 'pm2:update-interpreter');
         });
 
       });

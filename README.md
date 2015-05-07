@@ -5,7 +5,7 @@ A set of tasks for [Shipit](https://github.com/shipitjs/shipit) used for [pm2](h
 **Features:**
 
 - Automatically starts or restarts your [processes.json](https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#json-app-declaration). Triggered on `published`.
-- Automatically updates the process `execute_interpreter` before start or restart. Triggered on `updated`. (Note: this currently only works with a single app process and requires [shipit-nvm](https://github.com/callerc1/shipit-nvm)).
+- Automatically updates the process `execute_interpreter` to a specific node version before start or restart. Triggered on `updated`. (Note: this currently only works with a single app process and requires [shipit-nvm](https://github.com/callerc1/shipit-nvm)).
 - Works with [shipit-deploy](https://github.com/shipitjs/shipit-deploy)
 - Has a direct pass though task to [pm2](https://github.com/Unitech/pm2) commands.
 - Works via [shipit-cli](https://github.com/shipitjs/shipit) and [grunt-shipit](https://github.com/shipitjs/grunt-shipit)

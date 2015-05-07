@@ -13,7 +13,7 @@ var pathIsAbsolute = require('path-is-absolute');
  */
 
 module.exports = function (gruntOrShipit) {
-  utils.registerTask(gruntOrShipit, 'pm2:update-confd', task);
+  utils.registerTask(gruntOrShipit, 'pm2:update-interpreter', task);
 
   function task() {
     var shipit = utils.getShipit(gruntOrShipit);
@@ -212,7 +212,7 @@ module.exports = function (gruntOrShipit) {
     }else {
       throw new Error(
         shipit.log(
-          chalk.gray('try running pm2:init before pm2:update-confd')
+          chalk.gray('try running pm2:init before pm2:update-interpreter')
         )
       );
     }
