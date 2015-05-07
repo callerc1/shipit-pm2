@@ -32,7 +32,6 @@ module.exports = function (gruntOrShipit) {
       }
 
       return shipit[method](
-        //node -v &&
         sprintf('pm2 startOrRestart %s', shipit.config.pm2.json)
       );
 
