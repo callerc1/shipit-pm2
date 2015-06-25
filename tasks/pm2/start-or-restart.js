@@ -24,7 +24,7 @@ module.exports = function (gruntOrShipit) {
         var jsonAbsPath = shipit.releasePath || shipit.currentPath;
 
         //if shipit.config.pm2.json is a shared file.
-        if(shipit.config.shared.files.indexOf(shipit.config.pm2.json) >= 0){
+        if(shipit.config.shared && shipit.config.shared.files.indexOf(shipit.config.pm2.json) >= 0){
           jsonAbsPath = shipit.sharedPath;
         }
 
