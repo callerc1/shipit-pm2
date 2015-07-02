@@ -24,7 +24,7 @@ module.exports = function (gruntOrShipit) {
 
       var nvmrcPath = remote ? shipit.releasePath || shipit.currentPath : shipit.config.workspace;
       //if .nvmrc is a shared file.
-      if(remote && shipit.config.shared.files.indexOf('.nvmrc') >= 0){
+      if(remote && shipit.config.shared && shipit.config.shared.files.indexOf('.nvmrc') >= 0){
         nvmrcPath = shipit.sharedPath;
       }
 
