@@ -20,20 +20,20 @@ module.exports = function (gruntOrShipit) {
 
   shipit.on('deploy', function () {
 
-    utils.runTask(gruntOrShipit, 'pm2:init')
+    shipit.start('pm2:init');
 
     shipit.on('pm2_inited', function () {
 
       shipit.on('nvm_inited', function () {
 
         shipit.on('updated', function () {
-          utils.runTask(gruntOrShipit, 'pm2:update-interpreter');
+          shipit.start('pm2:update-interpreter');
         });
 
       });
 
       shipit.on('published', function () {
-        utils.runTask(gruntOrShipit, 'pm2:start-or-restart');
+        shipit.start('pm2:start-or-restart');
       });
 
     });
