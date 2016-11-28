@@ -45,7 +45,7 @@ An string specifying the path to the pm2 json app declaration file (see [pm2 rea
 ### `pm2.reload`
 
 Type: `Boolean`
-Default: *`false`
+Default: `false`
 
 If true, the app reloads gracefully with `pm2 startOrReload`.  If false, the app is restarted with `pm2 startOrRestart`.
 
