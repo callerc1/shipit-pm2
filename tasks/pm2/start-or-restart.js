@@ -5,7 +5,7 @@ var Bluebird = require('bluebird');
 var pathIsAbsolute = require('path-is-absolute');
 var path = require('path');
 /**
- * Runs pm2 start or restart
+ * Runs pm2 start or restart (reload if shipit.config.pm2.reload is set)
  */
 
 module.exports = function (gruntOrShipit) {
@@ -32,7 +32,7 @@ module.exports = function (gruntOrShipit) {
       }
 
       return shipit[method](
-        sprintf('pm2 startOrRestart %s', shipit.config.pm2.json)
+        sprintf('pm2 %s %s', shipit.config.pm2.reload ? 'startOrReload': 'startOrRestart', shipit.config.pm2.json)
       );
 
     }
