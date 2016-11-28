@@ -20,6 +20,7 @@ module.exports = function (gruntOrShipit) {
     shipit.currentPath = shipit.config.deployTo ? path.join(shipit.config.deployTo, 'current') : undefined;
     shipit.config.pm2 = shipit.config.pm2 || {};
     shipit.config.pm2.json = shipit.config.pm2.json || 'app.json'; //app.json could be included in your apps repo or shared
+    shipit.config.pm2.reload = shipit.config.pm2.reload || false;
     shipit.sharedPath = shipit.sharedPath || 'shared';
 
     // Allow for an absolute path

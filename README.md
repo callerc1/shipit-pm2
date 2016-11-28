@@ -4,7 +4,7 @@ A set of tasks for [Shipit](https://github.com/shipitjs/shipit) used for [pm2](h
 
 **Features:**
 
-- Automatically starts or restarts your [processes.json](https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#json-app-declaration). Triggered on `published`.
+- Automatically starts or restarts (or reloads) your [processes.json](https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#json-app-declaration). Triggered on `published`.
 - Automatically updates the process `execute_interpreter` to a specific node version before start or restart. Triggered on `updated`. (Note: this currently only works with a single app process and requires [shipit-nvm](https://github.com/callerc1/shipit-nvm)).
 - Works with [shipit-deploy](https://github.com/shipitjs/shipit-deploy)
 - Has a direct pass though task to [pm2](https://github.com/Unitech/pm2) commands.
@@ -41,6 +41,13 @@ Type: `String`
 Default: *`'app.json'`*
 
 An string specifying the path to the pm2 json app declaration file (see [pm2 readme](https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#json-app-declaration) for more info).
+
+### `pm2.reload`
+
+Type: `Boolean`
+Default: `false`
+
+If true, the app reloads gracefully with `pm2 startOrReload`.  If false, the app is restarted with `pm2 startOrRestart`.
 
 
 ### Example `shipitfile.js` options usage
