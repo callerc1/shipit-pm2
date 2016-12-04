@@ -31,8 +31,14 @@ module.exports = function (gruntOrShipit) {
         shipit.config.pm2.json = path.join(jsonAbsPath, shipit.config.pm2.json);
       }
 
+      var envswitch = '';
+
+      if (shipit.config.pm2.env) {
+        envswitch = '--env ' + shipit.config.pm2.env;
+      }
+
       return shipit[method](
-        sprintf('pm2 startOrRestart %s', shipit.config.pm2.json)
+        sprintf('pm2 startOrRestart %s %s', shipit.config.pm2.json, envswitch)
       );
 
     }
